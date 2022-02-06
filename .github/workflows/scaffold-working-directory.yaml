@@ -36,5 +36,4 @@ jobs:
 
       - uses: suzuki-shunsuke/tfaction/create-scaffold-pr@v0.4.5
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}

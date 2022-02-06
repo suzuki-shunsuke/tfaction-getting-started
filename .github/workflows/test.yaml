@@ -60,18 +60,15 @@ jobs:
       - uses: suzuki-shunsuke/tfaction/setup@v0.4.5
         id: setup
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
       - uses: suzuki-shunsuke/tfaction/test@v0.4.5
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
       - uses: suzuki-shunsuke/tfaction/tfmigrate-plan@v0.4.5
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
   terraform-plan:
@@ -110,18 +107,15 @@ jobs:
       - uses: suzuki-shunsuke/tfaction/setup@v0.4.5
         id: setup
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
       - uses: suzuki-shunsuke/tfaction/test@v0.4.5
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
       - uses: suzuki-shunsuke/tfaction/terraform-plan@v0.4.5
         with:
-          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
   # This job is used for branch protection rule
