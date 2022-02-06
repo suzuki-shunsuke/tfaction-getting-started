@@ -1,0 +1,13 @@
+registries:
+- type: standard
+  ref: v1.1.0 # renovate: depName=aquaproj/aqua-registry
+
+packages:
+- import: aqua/*.yaml
+- name: cli/cli@v2.5.0
+- name: int128/ghcp@v1.13.0
+- name: minamijoyo/tfmigrate@v0.3.1
+- name: reviewdog/reviewdog@v0.13.1
+- name: suzuki-shunsuke/ci-info@v2.0.3
+- name: suzuki-shunsuke/github-comment@v4.1.0
+- name: suzuki-shunsuke/tfcmt@v3.0.1
