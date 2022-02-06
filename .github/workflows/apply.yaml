@@ -41,12 +41,15 @@ jobs:
       TFACTION_JOB_TYPE: tfmigrate
     steps:
       - uses: actions/checkout@v2
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      # We recommend using GitHub App Token instead of personal access token,
+      # but in this getting started let's use personal access token.
+      # - name: Generate token
+      #   id: generate_token
+      #   uses: tibdex/github-app-token@v1
+      #   with:
+      #     app_id: ${{ secrets.APP_ID }}
+      #     private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - uses: aquaproj/aqua-installer@v0.7.0
         with:
@@ -59,17 +62,20 @@ jobs:
       - uses: suzuki-shunsuke/tfaction/setup@v0.4.5
         id: setup
         with:
-          github_app_token: ${{ steps.generate_token.outputs.token }}
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
+          github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
       - uses: suzuki-shunsuke/tfaction/tfmigrate-apply@v0.4.5
         with:
-          github_app_token: ${{ steps.generate_token.outputs.token }}
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
+          github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
       - uses: suzuki-shunsuke/tfaction/create-follow-up-pr@v0.4.5
         if: failure()
         with:
-          github_app_token: ${{ steps.generate_token.outputs.token }}
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
+          github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
   terraform-apply:
     name: "terraform-apply (${{matrix.target.target}})"
@@ -86,12 +92,15 @@ jobs:
       TFACTION_JOB_TYPE: terraform
     steps:
       - uses: actions/checkout@v2
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@v1
-        with:
-          app_id: ${{ secrets.APP_ID }}
-          private_key: ${{ secrets.APP_PRIVATE_KEY }}
+
+      # We recommend using GitHub App Token instead of personal access token,
+      # but in this getting started let's use personal access token.
+      # - name: Generate token
+      #   id: generate_token
+      #   uses: tibdex/github-app-token@v1
+      #   with:
+      #     app_id: ${{ secrets.APP_ID }}
+      #     private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
       - uses: aquaproj/aqua-installer@v0.7.0
         with:
@@ -104,14 +113,17 @@ jobs:
       - uses: suzuki-shunsuke/tfaction/setup@v0.4.5
         id: setup
         with:
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ steps.generate_token.outputs.token }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
       - uses: suzuki-shunsuke/tfaction/terraform-apply@v0.4.5
         with:
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ steps.generate_token.outputs.token }}
 
       - uses: suzuki-shunsuke/tfaction/create-follow-up-pr@v0.4.5
         if: failure()
         with:
+          # github_app_token: ${{ steps.generate_token.outputs.token }}
           github_app_token: ${{ steps.generate_token.outputs.token }}
