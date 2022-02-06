@@ -79,6 +79,7 @@ $ gh workflow run scaffold-working-directory.yaml -f target=github/foo
 ```
 
 Then a pull request would be created.
+
 Please merge the pull request.
 
 ## Create a pull request
@@ -110,8 +111,12 @@ $ git push origin add-issue-label
 $ gh pr create -t "add an issue label" -b "add an issue label"
 ```
 
+<img width="1341" alt="image" src="https://user-images.githubusercontent.com/13323303/152704813-35418f4d-61de-44b0-8f21-a6e84519872b.png">
+
 Please confirm the result of `terraform plan` and merge the pull request.
 Then `terraform apply` would be run in the main branch.
+
+<img width="963" alt="image" src="https://user-images.githubusercontent.com/13323303/152704907-3137a051-9e3a-43e5-8faa-f17e2e49f081.png">
 
 ## LICENSE
 
