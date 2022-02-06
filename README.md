@@ -63,9 +63,9 @@ $ vi tfaction-root.yaml
 $ cd templates/github
 $ vi main.tf
 $ git add .
-$ git checkout -b update-workflow
-$ git commit -m "add issue label"
-$ git push origin update-workflow
+$ git checkout -b update-template
+$ git commit -m "update template"
+$ git push origin update-template
 $ gh pr create -t "update template" -b "update template"
 ```
 
