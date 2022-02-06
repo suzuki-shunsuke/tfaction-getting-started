@@ -1,6 +1,6 @@
 # tfaction-getting-started
 
-Getting Started with tfaction.
+Getting Started with [tfaction](https://github.com/suzuki-shunsuke/tfaction).
 
 In this getting started, you create a repository from the template repository and
 set up tfaction and manage GitHub Issue Label with Terraform.
