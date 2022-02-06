@@ -14,7 +14,7 @@ Set up.
 1. [Create a repository from this template repository](https://github.com/suzuki-shunsuke/tfaction-getting-started/generate)
 1. Create required resources with Terraform
 1. Create Personal Access Token
-1. Fix the template
+1. Fix the template and tfaction-root.yaml
 
 Let's tfaction.
 
