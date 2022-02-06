@@ -39,9 +39,9 @@ module "aws" {
   main_branch = "main"
 
   repo                               = local.repo_name
-  s3_bucket_tfmigrate_history_name   = aws_s3_bucket.tfaction.id
-  s3_bucket_terraform_plan_file_name = aws_s3_bucket.tfaction.id
-  s3_bucket_terraform_state_name     = aws_s3_bucket.tfaction.id
+  s3_bucket_tfmigrate_history_name   = local.s3_bucket_name
+  s3_bucket_terraform_plan_file_name = local.s3_bucket_name
+  s3_bucket_terraform_state_name     = local.s3_bucket_name
 }
 
 # S3 Buckets
@@ -52,8 +52,9 @@ module "aws" {
 # * tfmigrate History File
 # In this getting started, we use the same bucket for them.
 resource "aws_s3_bucket" "tfaction" {
-  bucket = local.s3_bucket_name
-  acl    = "private"
+  bucket        = local.s3_bucket_name
+  acl           = "private"
+  force_destroy = true
 }
 
 resource "aws_s3_bucket_public_access_block" "tfaction" {
