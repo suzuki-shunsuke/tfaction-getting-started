@@ -60,9 +60,8 @@ Required permission: https://suzuki-shunsuke.github.io/tfaction/docs/config/gith
 
 ```console
 $ vi tfaction-root.yaml
-$ cd templates/github
-$ vi main.tf
-$ git add .
+$ vi templates/github/main.tf
+$ git add tfaction-root.yaml templates/github
 $ git checkout -b update-template
 $ git commit -m "update template"
 $ git push origin update-template
@@ -90,8 +89,7 @@ Let's add an issue request label with Terraform.
 ```console
 $ git fetch origin main
 $ git checkout -b add-issue-label origin/main
-$ cd github/foo
-$ vi label.tf
+$ vi github/foo/label.tf
 ```
 
 label.tf
@@ -106,7 +104,7 @@ resource "github_issue_label" "bar" {
 ```
 
 ```console
-$ git add .
+$ git add github/foo/label.tf
 $ git commit -m "add an issue label"
 $ git push origin add-issue-label
 $ gh pr create -t "add an issue label" -b "add an issue label"
