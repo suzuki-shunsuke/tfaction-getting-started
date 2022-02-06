@@ -75,7 +75,7 @@ Please merge the pull request.
 Please run GitHub Actions Workflow `scaffold-working-directory`.
 
 ```console
-$ gh workflow run scaffold-working-directory.yml -f target=github/foo
+$ gh workflow run scaffold-working-directory.yaml -f target=github/foo
 ```
 
 Then a pull request would be created.
