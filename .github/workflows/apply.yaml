@@ -18,7 +18,7 @@ jobs:
       tfmigrate_targets: ${{ steps.list-targets.outputs.tfmigrate_targets }}
       terraform_targets: ${{ steps.list-targets.outputs.terraform_targets }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: aquaproj/aqua-installer@v1.0.0
         with:
           aqua_version: v1.0.0
@@ -40,7 +40,7 @@ jobs:
       TFACTION_TARGET: ${{matrix.target.target}}
       TFACTION_JOB_TYPE: tfmigrate
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # We recommend using GitHub App Token instead of personal access token,
       # but in this getting started let's use personal access token.
@@ -88,7 +88,7 @@ jobs:
       TFACTION_TARGET: ${{matrix.target.target}}
       TFACTION_JOB_TYPE: terraform
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # We recommend using GitHub App Token instead of personal access token,
       # but in this getting started let's use personal access token.
