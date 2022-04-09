@@ -22,7 +22,7 @@ jobs:
         with:
           aqua_version: v1.3.0
 
-      - uses: suzuki-shunsuke/tfaction/scaffold-working-dir@v0.5.8
+      - uses: suzuki-shunsuke/tfaction/scaffold-working-dir@v0.5.9
         id: scaffold-working-dir
 
       # We recommend using GitHub App Token instead of personal access token,
@@ -34,6 +34,6 @@ jobs:
       #     app_id: ${{ secrets.APP_ID }}
       #     private_key: ${{ secrets.APP_PRIVATE_KEY }}
 
-      - uses: suzuki-shunsuke/tfaction/create-scaffold-pr@v0.5.8
+      - uses: suzuki-shunsuke/tfaction/create-scaffold-pr@v0.5.9
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
