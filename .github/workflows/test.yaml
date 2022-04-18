@@ -21,7 +21,7 @@ jobs:
       - uses: aquaproj/aqua-installer@v1.0.0
         with:
           aqua_version: v1.3.0
-      - uses: suzuki-shunsuke/tfaction/list-targets@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/list-targets@v0.5.11
         id: list-targets
 
   tfmigrate-plan:
@@ -57,17 +57,17 @@ jobs:
         with:
           secrets: ${{ toJSON(secrets) }}
 
-      - uses: suzuki-shunsuke/tfaction/setup@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/setup@v0.5.11
         id: setup
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
-      - uses: suzuki-shunsuke/tfaction/test@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/test@v0.5.11
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
-      - uses: suzuki-shunsuke/tfaction/tfmigrate-plan@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/tfmigrate-plan@v0.5.11
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
@@ -100,21 +100,21 @@ jobs:
         with:
           aqua_version: v1.3.0
 
-      - uses: suzuki-shunsuke/tfaction/export-secrets@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/export-secrets@v0.5.11
         with:
           secrets: ${{ toJSON(secrets) }}
 
-      - uses: suzuki-shunsuke/tfaction/setup@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/setup@v0.5.11
         id: setup
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
           ssh_key: ${{ secrets.TERRAFORM_PRIVATE_MODULE_SSH_KEY }} # This isn't needed if you don't use SSH key to checkout private Terraform Modules
 
-      - uses: suzuki-shunsuke/tfaction/test@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/test@v0.5.11
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
-      - uses: suzuki-shunsuke/tfaction/terraform-plan@v0.5.10
+      - uses: suzuki-shunsuke/tfaction/terraform-plan@v0.5.11
         with:
           github_app_token: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
 
