@@ -7,6 +7,10 @@ set up tfaction and manage GitHub Issue Label with Terraform.
 
 You would know how to set up tfaction and how tfaction works.
 
+## :warning: This repository was archived
+
+Getting Started was merged to [tfaction-example](https://github.com/suzuki-shunsuke/tfaction-example) and README was moved to [the official document](https://suzuki-shunsuke.github.io/tfaction/docs/getting-started).
+
 ## Steps
 
 Set up.
